@@ -1,0 +1,582 @@
+/* Takumi Sullivan the styles for final project grid layout for jan 4, 2020 FOR INDEX PAGE*/
+*{
+    margin: 0; /*for all*/
+    padding: 0;
+}
+html {
+    background-color: #ffffff;
+}
+
+body{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 110%;
+    line-height: 2em;
+    margin: 0 auto;    /* to center */
+    background-color: #ffffff;
+    display: grid;
+    grid-template: repeat(5 , auto) / auto 1fr;/* 4 rows and 1 column */
+    grid-template-areas: /* define template area*/
+        "header"
+        "navi"
+        "hero"
+        "main"
+        "footer";
+}
+a {font-weight: bold}
+a:link { color: #cc6600;} /*this is orange color*/
+a:hover, a:focus {color: #009900;} /*this is green color*/
+
+/*the styles for header*/
+header {
+    grid-area: header;
+    display: grid;
+    
+}
+header {
+    padding: 1.5em 1.5em 2em;
+    
+}
+
+header h2{
+    text-align: center;
+    font-size: 140%;
+    color: #003366;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
+
+/* header h3{ halloween
+    font-size: 120%;
+    text-indent: 1em;
+}*/
+
+/* the styles for navigation*/
+#nav_menu {
+    grid-area: navi;
+  position: sticky; /*sticky nav*/
+   top: 0; /*sticky nav*/
+    background-color: #ffffff;
+}
+#nav_menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+   display: grid;
+   grid-template: repeat(2, 35px) / repeat(7, 1fr); /* define 1 row and 5 columns */ 
+    align-content: center;
+    }
+
+#nav_menu ul li a{
+   display: block;
+   /* width: 100%; */
+    text-align: center;
+    padding-top: .25em;
+    padding-bottom: .25em;
+    text-decoration: underline;
+   /* background-color: rgba(255, 255, 255,0.85);*/
+    color: hsl(168, 63%, 24%);
+    font-size: 85%;
+    line-height: 1.5em;
+   font-family: 'Raleway', sans-serif;
+   font-weight: bold;
+    text-transform: uppercase;
+    
+}
+#nav_menu ul li a.current {
+    color: #cc6600;
+    }
+#nav_menu ul ul{
+  /*width: 100%;*/
+    display: none;  /* to hide the submenu until hover over*/
+   position: absolute;
+ top: 100%; /* postion submenus at bottom of main menu*/
+}
+#nav_menu ul ul li { 
+    float: none; /* to not to float*/
+} 
+#nav_menu a:hover {
+     color: #ffffff;
+    text-decoration: underline;
+     cursor: pointer;
+  /*  font-size: 90%;*/
+    color: #cc6600; */
+}
+/*#nav_menu ul li:hover > ul {
+    display: block; /* show submenu when hover
+}
+#nav_menu > ul::after {
+    content: ""; /* add empty content to the first ul
+    clear: both; /* to stop floating element
+    display: block;
+}*/
+
+/*the styles for main*/
+main {
+ 
+    grid-area: main;
+    display: grid;
+    grid-column: 1/2;
+    grid-template-rows: repeat(auto-fit, 12, 1fr);/* to make auto fit 12 rows*/
+    grid-template-columns: 1fr; /* to make grid works*/
+  /*  grid-gap: 20px;*/
+    grid-template-areas: 
+        "county_manager"
+        "county_comm"
+        "county_attorney"
+        "financial_info"
+        "governance"
+        "public_safety"
+        "natural"
+        "sustain"
+        "infra"
+        "econo_opp"
+        "community"
+        "engaged"; 
+}
+#county_manager {
+    grid-area: county_manager;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%; /* sticky nav padding*/
+/*margin-top: 4em; /* sticky nav padding*/
+    padding-bottom: 3em;
+}
+
+
+div.michel_l {
+  float: left;
+  max-width: 500px;
+font-size: 90%;
+    color: #003366;
+    font-weight: bold;
+  text-align: center;
+  font-style: italic;
+  text-indent: 0;
+  margin: 0.5em;
+  padding-right: 1.5em;
+}
+
+.boxed_right {
+   background-color: #0b3456;
+    float: right;
+    width: 40%;
+    margin: 2em;
+    color: #ffffff;
+    padding: 1.5em;
+}
+.boxed_right h4{
+    font-family: 'Tangerine', cursive;
+    font-size: 300%;
+    font-weight: 150; 
+    padding-bottom: .25em;
+    padding-top: .25em
+    
+}
+.boxed_right p {
+    font-size: 90%;
+    padding-top: .5em;
+    font-weight: 100;
+    font-style: italic;
+
+}
+.boxed_right_v {
+   background-color: #0b3456;
+    float: right;
+    width: 40%;
+    margin: 2em;
+    color: #ffffff;
+    padding: 1.5em;
+}
+.boxed_right_v h4{
+    font-family: 'Tangerine', cursive;
+    font-size: 300%;
+    font-weight: 150; 
+    padding-bottom: .25em;
+    padding-top: .25em
+    
+}
+.boxed_right_v p {
+   font-size: 90%;
+    padding-top: .5em;
+    font-weight: 100;
+    font-style: italic;
+    line-height: 1.75;
+
+}
+.boxed_left {
+   background-color: #0b3456;
+    float: left;
+    width: 40%;
+    margin: 2em;
+    color: #ffffff;
+    padding: 1.5em;
+}
+.boxed_left h4{
+    font-family: 'Tangerine', cursive;
+    font-size: 300%;
+    font-weight: 150; 
+    padding-bottom: .25em;
+    padding-top: .25em
+    
+}
+.boxed_left p {
+ font-size: 90%;
+    padding-top: .5em;
+    font-weight: 100;
+    font-style: italic;
+}
+
+ul { padding-left: 1em;} /* to align the list */
+li { 
+    padding-left: .25em;
+    line-height: 1.75em;
+     font-family: 'Noto Sans', sans-serif;}/* to align the list */
+
+ul.square {
+    list-style: square;
+    padding-top: .75em;
+    padding-bottom: .75em;
+   
+}
+ ul.circle {
+    list-style: circle;
+    list-style-position: outside;
+      padding-top: .75em;
+     padding-bottom: 1em;
+    padding-left: 3em;
+}
+ h5 {
+    font-size: 100%;
+    color: #cc6600;
+ /*   border-bottom: 2px dotted #cc6600;*/
+    text-transform: uppercase;
+     padding-top: 1.5em;
+     font-weight: bold;
+}
+ 
+/*styles for iframe*/
+ 
+
+#today { /*today;s show video*/
+    max-height: none;
+   float: none;
+    padding-left: 5em;
+    width: 90%;  
+}
+
+#irrigation, #recycle, #four, #response, #working, #child {
+    float: right;
+   margin: 1.75em;
+}
+#sugar, #turf, #career, #newborn, #newborn_02  {
+    float: left;
+    margin: 1.75em;
+    padding-right: 1em;
+}
+
+
+/* county commission seciton*/
+#county_comm {
+    grid-area: county_comm;
+    background-color: #e6e8e7;
+    padding-left: 12%;
+    padding-right: 12%;
+    padding-top: 5%; /* sticky nav padding*/
+    padding-bottom: 5%;
+    
+   /* margin-bottom: 5em;*/
+  /*  margin-top: 5em;*/
+}
+div.commissioners {
+  float: left;
+  max-width: 1000px;
+font-size: 90%;
+    color: #003366;
+    font-weight: bold;
+  text-align: center;
+  font-style: italic;
+  text-indent: 0;
+  margin-right: 2.90em; /* to keep return to top to the bottom*/
+  padding-right: 1em;
+    line-height: 1.75;
+}
+.commissioners {
+   /* padding-right: 15%;*/
+    padding-left: 15%;
+    padding-bottom: .25em;   
+}
+
+#financial_info{
+    grid-area: financial_info;
+    background-color: #e6e8e7;
+    padding-left: 12%;
+    padding-right: 12%;
+    padding-top: 5%; /* sticky nav padding*/
+    padding-bottom: 5%;
+}
+
+.pie {
+   /* padding-right: 15%;*/
+    padding-left: 17%;
+    padding-bottom: 1.25em;   
+}
+
+
+
+#hero {
+    width: 100%;
+    display: grid;
+    grid-column: 1/2;
+}
+ 
+
+section h3 {
+    text-transform: uppercase; 
+    font-size: 145%;
+    color: #003366;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    padding-bottom: 1em;
+    
+}
+section h2{ /*welcome to ac*/
+    font-size: 130%;
+   color: hsl(168, 63%, 24%);
+     padding-bottom: 1em;
+}
+
+
+/* attorney section*/
+#county_attorney {
+    grid-area: county_attorney;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%; /* sticky nav padding*/
+/*margin-top: 4em; /* sticky nav padding*/
+    padding-bottom: 3em;
+}
+
+
+div.sylvia {
+  float: left;
+  max-width: 400px;
+    font-size: 90%;
+    color: #003366;
+    font-weight: bold;
+  text-align: center;
+  font-style: italic;
+  text-indent: 0;
+  margin-right: 1.75em;
+  padding-right: 1em;
+}
+
+
+ul.square_sylvia {
+    list-style: square;
+    padding-top: 1em;
+    padding-bottom: 1.50em;
+    padding-left: 2.75em;
+   
+}
+#top1 {
+    text-align: right;
+    padding-bottom: .5em;
+    padding-right: 1em;
+    padding-top: 1em;
+    font-size: 90%;
+    float: right;
+     color: #cc6600;
+}
+#top1 a {
+    color: #cc6600;
+}
+#top1 a:hover {
+    color: #009900;}
+
+/* governance secion*/
+
+#governance {
+    grid-area: governance;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%; /* sticky nav padding*/
+/*margin-top: 4em; /* sticky nav padding*/
+    padding-bottom: 3em;
+    background-color: #f5f8f7
+}
+
+/* governance secion*/
+
+#public_safety {
+    grid-area: public_safety;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%; /* sticky nav padding*/
+/*margin-top: 4em; /* sticky nav padding*/
+    padding-bottom: 3em;
+    background-color: #ffffff;
+}
+
+/* natural section */
+#natural {
+    grid-area: natural;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%; /* sticky nav padding*/
+/*margin-top: 4em; /* sticky nav padding*/
+    padding-bottom: 3em;
+    background-color: #f5f8f7
+}
+
+/* sustain section*/
+#sustain {
+    grid-area: sustain;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%; /* sticky nav padding*/
+/*margin-top: 4em; /* sticky nav padding*/
+    padding-bottom: 3em;
+    background-color: #ffffff;
+}
+/* the styles for footer*/
+footer {
+    clear: both;
+    background-color: #003366;
+    display: grid;
+    grid-area: footer;
+    grid-column: 1/2;    
+}
+footer p{
+    text-align: center;
+    font-size: 70%;
+    color: #ffffff;
+    padding: 1em 1em;
+}
+#mobile_menu {
+    display: none;
+}
+
+
+/* media Q at max with 800px */
+@media only screen and (max-width: 799px) {
+    html { background-image: url(none;)}
+   /* body { box-shadow: none;}*/
+    body { font-size: 100%;}  
+   /* main img { width: 115%;}*/
+   #hero {
+        width: 99.5%;
+    }
+    
+    header h2 { font-size: 100%;}
+   
+    #nav_menu {
+        display: none;
+    }
+}
+/* media query for with max width of 767 */
+@media only screen and (max-width: 767px) {
+    body {
+        grid-template: repeat(5 , auto) / 1fr;/* 4 rows and 1 column */
+    grid-template-areas: /* define template area*/
+        "header"
+        "navi"
+        "hero"
+        "main"
+        "footer";
+    }
+    
+    header {
+        display: grid;
+        grid-template: repeat(3, auto) / 1fr;
+        /*grid-gap: .5em;*/
+    }
+    
+    main {
+        grid-template-columns: 1fr; /* twon rows and 1 column and both rows size auto */
+        padding: 0;
+        margin: 0;
+        grid-template-columns: 1fr; /* to make grid works*/
+        grid-template-areas: 
+        "county_manager"
+        "county_comm"
+        "county_attorney"
+        "financial_info"
+        "governance"
+        "public_safety"
+        "natural"
+        "sustain"
+        "infra"
+        "econo_opp"
+        "community"
+        "engaged"; 
+    }
+    #hero {
+        grid-column: 1/2;
+        width: 100%;
+    }
+    #county_manager, #county_comm, #county_attorney, #financial_info, #governance, #public_safety, #natural, #sustain, #infra, #econo_opp, #community, #engaged {
+        float:none;
+        padding: 0;
+        margin: 0;
+    }
+   
+    section {
+        float: none;
+        grid-column: 1 /2;
+       
+    }
+   #today { /*today;s show video*/
+
+   float: none;
+    padding-left: 0;
+    width: 90%;  
+}
+
+#irrigation, #recycle, #four, #response, #working, #child {
+    float: none;
+   margin: 0;
+}
+#sugar, #turf, #career, #newborn, #newborn_02  {
+    float: none;
+    margin: none;
+    padding-right: none;
+}
+    
+ 
+.boxed_right, boxed_right h4, .boxed_right p .boxed_right_v, .boxed_right_v h4, .boxed_right_v p, .boxed_left, .boxed_left h4, .boxed_left p  {
+   display: none;
+}
+
+    
+    #mobile_menu {
+        display: block;
+        grid-area: navi;
+    }
+    .slicknav_menu {
+        background-color: #003366 !important;
+    }
+}
+    /*mobile portrait to landscape */
+    @media only screen and (max-width: 479px) {
+        header h2 
+        { font-size: 130%;
+            text-indent: 1em;
+        }
+       article img {
+        padding-left: 2em;
+        padding-right: 2em;
+        }
+        
+        header h3 { 
+            font-size: 110%;
+            text-indent: 1em;
+        }
+        section h1 { font-size: 130%;
+    }    
+            }
+       
+      
+        
+
+    
+

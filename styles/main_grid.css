@@ -1,0 +1,888 @@
+/* Alachua County annual report styles*/
+*{
+ margin: 0; /*for all*/
+    padding: 0;
+}
+html {
+    background-color: #ffffff;
+}
+
+body{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 130%;
+    line-height: 2em;
+    margin: 0 auto;    /* to center */
+    background-color: #ffffff;
+    display: grid;
+    grid-template: repeat(5 , auto) / auto 1fr;/* 4 rows and 1 column */
+    grid-template-areas: /* define template area*/
+        "header"
+        "navi"
+        "hero"
+        "main"
+        "footer";
+}
+a {font-weight: bold}
+a:link { color: #cc6600;} /*this is orange color*/
+a:hover, a:focus {color: #009900;} /*this is green color*/
+
+/************************/
+/***the styles for header*/
+/************************/
+
+header {
+    grid-area: header;
+    display: grid;
+    
+}
+header {
+    padding: 1em .5em 1em;
+    
+}
+
+.header{
+   margin-left: auto;
+    margin-right: auto;
+}
+.header img {
+  float: left;
+  width: 15%;
+    min-width: 15%;
+    padding-right: .5em;
+}
+
+.header h2 {
+  position: relative;
+ padding-top: 18px;
+  padding-left: 10px;
+    font-size: 120%;
+    color: hsl(168, 63%, 24%);
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
+/*header h2{
+    text-align: center;
+    font-size: 120%;
+    color: hsl(168, 63%, 24%);
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}*/
+
+
+/*****************************/
+/* the styles for navigation*/
+/*****************************/
+
+#nav_menu {
+    grid-area: navi;
+  position: sticky; /*sticky nav*/
+   top: 0; /*sticky nav*/
+    background-color: hsl(168, 63%, 24%);
+}
+#nav_menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+   display: grid;
+   grid-template: repeat(2, 35px) / repeat(7, 1fr); /* define 1 row and 5 columns */ 
+    align-content: center;
+    display: -ms-inline-block;
+    display: -ms-inline-flexbox;
+    -ms-grid-row: 1fr 1fr;
+    }
+
+#nav_menu ul li a{
+   display: block;
+   /* width: 100%; */
+    text-align: center;
+    padding-top: .75em;
+    padding-bottom: 1.25em;
+   
+    text-decoration: underline;
+   /* background-color: rgba(255, 255, 255,0.85);*/
+    color: #ffffff;
+    font-size: 70%;
+    line-height: 1em;
+   font-family: 'Raleway', sans-serif;
+   font-weight: 600;
+    text-transform: uppercase;
+    
+}
+#nav_menu ul li a.current {
+    color: #cc6600;
+    }
+#nav_menu ul ul{
+  width: 100%;
+    display: none;  /* to hide the submenu until hover over*/
+   position: absolute;
+ top: 100%; /* postion submenus at bottom of main menu*/
+}
+
+/***** sub menu stuff******/
+/**************************/
+/*#nav_menu ul li:hover > ul {
+    display: block;
+}
+#nav_menu > ul::after {
+    content: "";
+    clear: both;
+    display: block
+}*/
+
+#nav_menu ul ul li { 
+    float: none; /* to not to float*/
+} 
+#nav_menu a:hover {
+     color: #ffffff;
+    text-decoration: underline;
+     cursor: pointer;
+  /*  font-size: 90%;*/
+    color: #cc6600; 
+}
+
+/*****************************/
+/****the styles for main******/
+/*****************************/
+
+main {
+    grid-area: main;
+    display: grid;
+    grid-column: 1/2;
+    grid-template: repeat(13, auto) / 1fr; 
+    grid-template-areas: 
+        "county_manager"
+        "county_comm"
+        "county_attorney"
+        "financial_info"
+        "governance"
+        "public_safety"
+        "natural"
+        "sustain"
+        "infra"
+        "econo_opp"
+        "community"
+        "engaged"
+        "list"; 
+}
+
+/*****************************/
+/*****county manager section**/
+/*****************************/
+
+#county_manager {
+    grid-area: county_manager;
+    padding-left: 12%;
+    padding-right: 12%;
+    padding-top: 5%; /* sticky nav padding*/
+/*margin-top: 4em; /* sticky nav padding*/
+    padding-bottom: 3em;
+}
+
+
+div.michel_l {
+  float: left;
+  max-width: 500px;
+font-size: 90%;
+    color: #003366;
+    font-weight: bold;
+  text-align: center;
+  font-style: italic;
+  text-indent: 0;
+  margin: 0.5em;
+  padding-right: 1.5em;
+}
+
+
+/*****************************/
+/*****mission boxes***********/
+/*****************************/
+
+.boxed_right, .boxed_right_v {
+   background-color: hsl(168, 63%, 24%);
+    float: right;
+      width: 40%;
+    max-width: 25%;
+    margin: 2em;
+    color: #ffffff;
+    padding: 1.5em;
+}
+
+.boxed_left {
+   background-color: hsl(168, 63%, 24%);
+    float: left;
+      width: 40%;
+    max-width: 25%;
+    margin: 2em;
+    color: #ffffff;
+    padding: 1.5em;
+}
+.boxed_right h4, .boxed_right_v h4, .boxed_left h4{
+    font-family: 'Tangerine', cursive;
+    font-size: 300%;
+    font-weight: 100; 
+    padding-bottom: .25em;
+    padding-top: .25em
+    
+}
+.boxed_right p, .boxed_right_v p, .boxed_left p {
+    font-size: 80%;
+    font-weight: 100;
+    font-style: italic;
+    line-height: 1.75
+
+}
+
+/*****************************/
+/*****mission navy boxes***********/
+/*****************************/
+
+.boxed_right_navy {
+   background-color: #0b3456;
+    float: right;
+      width: 40%;
+    max-width: 25%;
+    margin: 2em;
+    color: #ffffff;
+    padding: 1.5em;
+}
+.boxed_right_v_navy
+{
+   background-color: #0b3456;
+    float: right;
+      width: 40%;
+    max-width: 25%;
+    margin: 2em;
+    color: #ffffff;
+    padding: 1.5em;
+}
+
+.boxed_left_navy {
+   background-color: #0b3456;
+    float: left;
+      width: 40%;
+    max-width: 25%;
+    margin: 2em;
+    color: #ffffff;
+    padding: 1.5em;
+}
+.boxed_right_navy h4, .boxed_right_v_navy h4, .boxed_left_navy h4{
+    font-family: 'Tangerine', cursive;
+    font-size: 300%;
+    font-weight: 100; 
+    padding-bottom: .25em;
+    padding-top: .25em
+    
+}
+.boxed_right_navy p, .boxed_right_v_navy p, .boxed_left_navy p {
+    font-size: 80%;
+    font-weight: 100;
+    font-style: italic;
+    line-height: 1.75
+
+}
+
+
+/*****************************/
+/**********bullet list********/
+/*****************************/
+
+ul { padding-left: 1em;} /* to align the list */
+li { 
+    padding-left: .25em;
+    line-height: 1.75em;
+     font-family: 'Noto Sans', sans-serif;}/* to align the list */
+
+ul.square {
+    list-style: square;
+    padding-top: .75em;
+    padding-bottom: .75em;
+   
+}
+ ul.circle {
+    list-style: circle;
+    list-style-position: outside;
+      padding-top: .75em;
+     padding-bottom: 1em;
+    padding-left: 3em;
+}
+
+
+ul.square_list {
+    list-style: square;
+    padding-top: .75em;
+    padding-bottom: .75em;
+}
+
+.square_list li { /* line height on stay engaged list*/
+    line-height: 2.2;
+}
+
+/*****************************/
+/******objectives/successes***/
+/*****************************/
+
+ h5 {
+    font-size: 100%;
+    color: #cc6600;
+ /*   border-bottom: 2px dotted #cc6600;*/
+    text-transform: uppercase;
+     padding-top: 1.5em;
+     font-weight: bold;
+}
+/*****************************/
+/*******styles for iframe*****/
+/*****************************/
+ 
+
+#today { /*today;s show video*/
+    max-height: none;
+   float: none;
+    width: 100%;  
+}
+
+#irrigation, #recycle, #four, #response, #working, #child, #nw43rd, #nw8th, #visitgville, #crisis, #helping_ani {
+    float: right;
+   margin: 1.75em;
+     max-width: 65%;
+}
+#sugar, #turf, #career, #newborn, #newborn_02, #towerrd, #eco_park, #foster, #cody {
+    float: left;
+    margin: 1.75em;
+    padding-right: 1em;
+     max-width: 65%;
+   
+}
+
+/*****************************/
+/***county commission seciton*/
+/*****************************/
+
+#county_comm {
+    grid-area: county_comm;
+    background-color: #e6e8e7;
+    padding-left: 12%;
+    padding-right: 12%;
+    padding-top: 5%; /* sticky nav padding*/
+    padding-bottom: 5%;
+   
+}
+div.commissioners {
+  float: left;
+  max-width: 1000px;
+font-size: 90%;
+color: #003366;
+    font-weight: bold;
+  text-align: center;
+  font-style: italic;
+  text-indent: 0;
+  /*margin-right: 2.90em; /* to keep return to top to the bottom*/
+  padding-right: 15%;
+    padding-left: 15%;
+    line-height: 1.75;
+}
+/*****************************/
+/**** stay engaged section ***/
+/*****************************/
+
+#engaged {
+    grid-area: engaged;
+    background-color: #ffffff;
+    padding-left: 12%;
+    padding-right: 12%;
+    padding-top: 5%; /* sticky nav padding*/
+    padding-bottom: 5%;
+   }
+
+
+/* stay engaged list section */
+#list {
+    grid-area: list;
+    background-color: #ffffff;
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-bottom: 5%;
+}
+
+h6 {
+    font-size: 100%;
+    color: #000000;
+ /*   border-bottom: 2px dotted #cc6600;*/
+     padding-top: 1.5em;
+    font-weight: bold;}
+
+
+/*****************************/
+/***** pie chart section******/
+/*****************************/
+
+#financial_info{
+    grid-area: financial_info;
+    background-color: #e6e8e7;
+    padding-left: 12%;
+    padding-right: 12%;
+    padding-top: 5%; /* sticky nav padding*/
+    padding-bottom: 5%;
+}
+
+.pie {
+   /* padding-right: 15%;*/
+    padding-left: 17%;
+    padding-bottom: 1.25em;   
+    width: 70%;
+}
+
+
+/*****************************/
+/*******hero image ***********/
+ /*****************************/
+#hero {
+    width: 100%;
+    display: grid;
+    grid-column: 1/2;
+}
+ 
+/*****************************/
+/****section headers**********/
+/*****************************/
+
+section h3 {
+    text-transform: uppercase; 
+    font-size: 145%;
+    color: hsl(168, 63%, 24%);
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    padding-bottom: 1em;
+    
+}
+section h2{ /*welcome to ac*/
+    font-size: 120%;
+   color: #003366;
+     padding-bottom: 1em;
+}
+
+/*****************************/
+/* attorney section*/
+/*****************************/
+
+#county_attorney {
+    grid-area: county_attorney;
+    padding-left: 12%;
+    padding-right: 12%;
+    padding-top: 5%; /* sticky nav padding*/
+/*margin-top: 4em; /* sticky nav padding*/
+    padding-bottom: 3em;
+}
+
+
+div.sylvia {
+  float: left;
+font-size: 90%;
+    color: #003366;
+    font-weight: bold;
+  text-align: center;
+  font-style: italic;
+  text-indent: 0;
+  margin-right: 1.75em;
+  padding-right: 1em;
+}
+
+
+ul.square_sylvia {
+    list-style: square;
+    padding-top: 1em;
+    padding-bottom: 1.50em;
+    padding-left: 2.75em;
+   
+}
+
+/*****************************/
+/*****return to top*******/
+/*****************************/
+
+#top1 {
+    text-align: right;
+    padding-bottom: .5em;
+    padding-right: 1em;
+    padding-top: 1em;
+    font-size: 70%;
+    float: right;
+     color: #cc6600;
+}
+#top1 a {
+    color: #cc6600;
+    font-weight:normal;
+}
+#top1 a:hover {
+    color: #009900;
+}
+/*****************************/
+/* governance secion*/
+/*****************************/
+
+#governance {
+    grid-area: governance;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%; /* sticky nav padding*/
+/*margin-top: 4em; /* sticky nav padding*/
+    padding-bottom: 3em;
+    background-color: #f5f8f7
+}
+/*****************************/
+/* pub safety*/
+/*****************************/
+
+#public_safety {
+    grid-area: public_safety;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%; /* sticky nav padding*/
+/*margin-top: 4em; /* sticky nav padding*/
+    padding-bottom: 3em;
+    background-color: #ffffff;
+}
+/*****************************/
+/* natural section */
+/*****************************/
+
+#natural {
+    grid-area: natural;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%; /* sticky nav padding*/
+/*margin-top: 4em; /* sticky nav padding*/
+    padding-bottom: 3em;
+    background-color: #f5f8f7
+}
+/************************/
+/**** sustain section****/
+/************************/
+
+#sustain {
+    grid-area: sustain;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%; /* sticky nav padding*/
+/*margin-top: 4em; /* sticky nav padding*/
+    padding-bottom: 3em;
+    background-color: #ffffff;
+}
+/************************/
+/*****infra sction*******/
+/************************/
+
+#infra {
+    grid-area: infra;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%; /* sticky nav padding*/
+/*margin-top: 4em; /* sticky nav padding*/
+    padding-bottom: 3em;
+    background-color: #f5f8f7
+}
+/*****************************/
+/* econo section*/
+/*****************************/
+
+#econo_opp {
+    grid-area: econo_opp;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%; /* sticky nav padding*/
+/*margin-top: 4em; /* sticky nav padding*/
+    padding-bottom: 3em;
+    background-color: #ffffff;
+}
+
+/*****************************/
+/* community resources section*/
+/*****************************/
+
+#community {
+    grid-area: community;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%; /* sticky nav padding*/
+/*margin-top: 4em; /* sticky nav padding*/
+    padding-bottom: 3em;
+    background-color: #f5f8f7
+}
+
+
+/*****************************/
+/* the styles for footer*/
+/*****************************/
+
+
+footer {
+    clear: both;
+    background-color: hsl(168, 63%, 24%);
+    display: grid;
+    grid-area: footer;
+    grid-column: 1/2;    
+}
+footer p{
+    text-align: center;
+    font-size: 70%;
+    color: #ffffff;
+    padding: 1em 1em;
+}
+
+/*****************************/
+/* mobile menu***
+/*****************************/
+
+
+#mobile_menu {
+    display: none;
+}
+
+/*****************************/
+/*****************************************/
+/***** media Q at max with 1200px *********/
+/*****************************************/
+/*****************************/
+@media only screen and (max-width: 1280px) {
+img.commish {
+        width: 100%
+    }
+ #mobile_menu {
+        display: block;
+        grid-area: navi;
+        text-transform: uppercase;
+   
+    }
+    .slicknav_menu {
+        background-color: hsl(168, 63%, 24%) !important;
+    }
+    #nav_menu {
+        display: none;
+    }
+}
+
+
+/*****************************/
+/*****************************************/
+/***** media Q at max with 800px *********/
+/*****************************************/
+/*****************************/
+
+
+@media only screen and (max-width: 799px) {
+    html { background-image: url(none;)}
+   /* body { box-shadow: none;}*/
+    body { font-size: 110%;}  
+   /* main img { width: 115%;}*/
+   #hero {
+        width: 100%;
+    }
+    h3 {
+        padding-top: 1em
+    }
+    main {
+        padding: 0;
+    }
+    header h2 { font-size: 100%;
+    }
+    
+     div.michele_l, div.sylvia {
+      font-size: 90%;
+        text-align: center;
+        }
+  
+      div.commissioners {
+      font-size: 80%;
+        text-align: center;
+        padding-right: 0;
+        padding-left: 0;
+          line-height: 1.5;
+        }
+    .michele_mobile {
+        width: 80%;
+    }
+    .torres {
+        width: 80%;
+    }
+   
+    img.commish {
+        width: 90%
+    }
+    div.michel_l,  div.sylvia, div.commissioners  {
+     float: none;
+ }
+    #list {
+    padding-left: 5%;
+    padding-right: 5%;
+  
+}
+    .pie {
+   /* padding-right: 15%;*/
+    padding: 1.5em;
+    
+      
+}
+    
+    /*****************************/
+    /* mission boxes**/
+    /*****************************/
+    
+    .boxed_right, boxed_right h4, .boxed_right p .boxed_right_v, .boxed_right_v h4, .boxed_right_v p, .boxed_left, .boxed_left h4, .boxed_left p, .boxed_right_v p, .boxed_right_v  {
+   display: none;
+}
+
+      .boxed_right_navy, boxed_right_navy h4, .boxed_right_navy p .boxed_right_v_navy, .boxed_right_v_navy h4, .boxed_right_v_navy p, .boxed_left_navy, .boxed_left_navy h4, .boxed_left_navy p, .boxed_right_v_navy p, .boxed_right_v_navy {
+        display: none;}
+    
+    
+    /*****************************/
+    /*iframe*/
+    /*****************************/
+#irrigation, #recycle, #four, #response, #working, #child, #nw43rd, #nw8th, #visitgville, #crisis, #helping_ani, #sugar, #turf, #career, #newborn, #newborn_02, #towerrd, #eco_park, #foster, #cody  {
+    float: none;
+    margin: 0; 
+   /* width: 90%;*/
+    max-width: 100%;
+   
+    padding-right: 0;
+  
+}
+    #today { /*today;s show video*/
+    float: none;
+    padding-left: 0;
+    width: 100%;
+     
+}
+  /*  #mobile_menu {
+        display: block;
+        grid-area: navi;
+        text-transform: uppercase;
+   
+    }
+    .slicknav_menu {
+        background-color: hsl(168, 63%, 24%) !important;
+    }
+    #nav_menu {
+        display: none;
+    }*/
+    
+}
+/*****************************/
+/*****************************************/
+/* media query for with max width of 767 */
+/*****************************************/
+/*****************************/
+
+@media only screen and (max-width: 767px) {
+    body {
+        grid-template: repeat(5 , auto) / 1fr;/* 4 rows and 1 column */
+    grid-template-areas: /* define template area*/
+        "header"
+        "navi"
+        "hero"
+        "main"
+        "footer";
+    }
+    
+    .header {
+        display: grid;
+        grid-area: header;
+        /*grid-gap: .5em;*/
+    }
+    
+     .header img {
+        float: none;
+        width: 10%;
+        justify-self: center;
+    }
+    .header h2 {
+        text-align: center;
+    }
+    
+    main {
+        grid-template-columns: 1fr; /* twon rows and 1 column and both rows size auto */
+        padding: 0;
+        margin: 0;
+       /* line-height: 1.75;*/
+         grid-area: main;
+        grid-column: 1/2;
+        grid-template-areas: 
+        "county_manager"
+        "county_comm"
+        "county_attorney"
+        "financial_info"
+        "governance"
+        "public_safety"
+        "natural"
+        "sustain"
+        "infra"
+        "econo_opp"
+        "community"
+        "engaged"
+        "list"; 
+    }
+    #hero {
+        grid-column: 1/2;
+        width: 100%;
+    }
+    
+    /*****************************/
+    /* dept sections*/
+    /*****************************/
+    
+    #county_manager, #county_comm, #county_attorney, #governance, #public_safety, #natural, #sustain, #infra, #econo_opp, #community, #engaged, #list {
+        float:none;
+        padding-left: 1em;
+        padding-right: 1em;
+        margin: 0;
+    }
+   
+    #financial_info {
+        padding-left: 1em;
+        padding-right: 1em;
+        margin-right: 0;
+    }
+    
+    
+   div.commissioners {
+        text-align: center;
+        line-height: 1.5;
+        padding-right: 0;
+        }
+}
+   
+/*****************************/
+/*mobile portrait to landscape */
+/*****************************/
+
+    @media only screen and (max-width: 479px) {
+        
+        main {
+          
+            font-size: 90%;
+        }
+          .header img{
+            padding: none;
+            width: 25%;
+        }
+        .header h2 
+        { font-size: 130%;
+          padding-top: none;
+            padding-left: none;
+            
+        }
+      irrigation, #recycle, #four, #response, #working, #child, #nw43rd, #nw8th, #visitgville, #crisis, #helping_ani, #sugar, #turf, #career, #newborn, #newborn_02, #towerrd, #eco_park, #foster, #cody  {
+
+          max-width: 100%;}
+        
+        header h3 { 
+            font-size: 110%;
+            text-indent: 1em;
+        }
+        
+             
+        section h1 { font-size: 130%;
+    }    
+            }
+       
+      
+        
